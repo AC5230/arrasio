@@ -1582,7 +1582,44 @@ exports.basic = {
                         }, }, 
                 ]
             };
-            exports.autogunner = makeAuto(exports.gunner);            
+            exports.autogunner = makeAuto(exports.gunner);
+            exports.hewngunner = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Hewn Gunner',
+            DANGER: 6,
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  12,    3.5,     1,      0,     7.25,    0,     0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
+                        TYPE: exports.bullet,
+                    }, }, { 
+                POSITION: [  12,    3.5,     1,      0,    -7.25,    0,     0.75, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
+                        TYPE: exports.bullet,
+                    }, }, { 
+                POSITION: [  16,    3.5,     1,      0,     3.75,    0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
+                        TYPE: exports.bullet,
+                    }, }, { 
+                POSITION: [  16,    3.5,     1,      0,    -3.75,    0,     0.25, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
+                        TYPE: exports.bullet,
+                    }, }, {
+                POSITION: [  12,    3.5,     1,      0,     7.25,    45,     0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
+                        TYPE: exports.bullet,
+                    }, }, { 
+                POSITION: [  12,    3.5,     1,      0,    -7.25,    -45,     0.25, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
+                        TYPE: exports.bullet,
+                    }, }, 
+            ],
+        };
             exports.nailgun = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Nailgun',
@@ -3762,6 +3799,26 @@ exports.basic = {
                             }, {
                     POSITION: [  13,     8,      0,     240,    170, 0], 
                         TYPE: exports.sniper3gun,
+                            },
+                ],
+            };
+            exports.boomer3 = {
+                LABEL: '',
+                BODY: {
+                    SPEED: base.SPEED * 1.1,
+                },
+                PARENT: [exports.genericTank],
+                DANGER: 6,
+                FACING_TYPE: 'autospin',
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  12,     8,      0,      0,     190, 0], 
+                        TYPE: exports.boomer,
+                            }, {
+                    POSITION: [  12,     8,      0,     120,    190, 0], 
+                        TYPE: exports.boomer,
+                            }, {
+                    POSITION: [  12,     8,      0,     240,    190, 0], 
+                        TYPE: exports.boomer,
                             },
                 ],
             };
