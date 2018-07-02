@@ -1,7 +1,7 @@
 // GUN DEFINITIONS
 const combineStats = function(arr) {
     try {
-    // Build a blank array of the appropriiate length
+    // Build a blank array of the appropriate length
     let data = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
     arr.forEach(function(component) {
         for (let i=0; i<data.length; i++) {
@@ -29,7 +29,7 @@ const combineStats = function(arr) {
     }
 };
 const skillSet = (() => {
-    let config = require('../config.json');
+    let config = require('../../../config.json);
     let skcnv = {
         rld: 0,
         pen: 1,
